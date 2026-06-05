@@ -972,8 +972,8 @@
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>City / Municipality *</label>
-          <input type="text" id="fcity" placeholder="Your target city" required/>
+          <label>Village, Subdivision or City *</label>
+          <input type="text" id="fcity" placeholder="e.g. Avida Settings Nuvali, Sta. Rosa City" required/>
         </div>
         <div class="form-group">
           <label>Package Interest</label>
@@ -989,8 +989,16 @@
       <button class="submit-btn" onclick="submitForm()">🚀 Submit My Inquiry</button>
       <p class="form-note">🔒 Your information is confidential and will only be used to contact you about your franchise inquiry.</p>
     </div>
-    <div class="success-msg" id="successMsg">
-      ✅ Thank you! We received your inquiry.<br/>Our franchise team will contact you within 24 hours.
+    <div class="success-msg" id="successMsg" style="display:none; text-align:center; padding:40px 20px;">
+      <div style="font-size:56px; margin-bottom:16px;">🎉</div>
+      <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:var(--teal); margin-bottom:10px;">Inquiry Received!</div>
+      <div style="font-size:15px; color:var(--muted); line-height:1.7; margin-bottom:20px;">
+        Thank you! Our franchise team will contact you within <strong style="color:var(--text);">24 hours.</strong><br/>
+        Check your WhatsApp — we just sent you a confirmation.
+      </div>
+      <div style="padding:14px 20px; background:rgba(75,191,191,0.08); border:1px solid rgba(75,191,191,0.2); border-radius:10px; font-size:13px; color:var(--muted);">
+        📧 A copy has also been sent to our franchise team at <strong style="color:var(--teal);">franchise@3dbotics.ph</strong>
+      </div>
     </div>
   </div>
 
