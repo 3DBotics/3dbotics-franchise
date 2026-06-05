@@ -327,6 +327,132 @@
     .ranks-grid { gap: 8px; }
     .rank-pill { min-width: 90px; padding: 14px 12px; }
   }
+
+  /* ─── OPTION 3 VILLAGE HUB SPECIAL STYLES ─── */
+  @keyframes kaboom {
+    0%   { transform: scale(1) rotate(-2deg); }
+    25%  { transform: scale(1.15) rotate(2deg); }
+    50%  { transform: scale(1.08) rotate(-1deg); }
+    75%  { transform: scale(1.12) rotate(1deg); }
+    100% { transform: scale(1) rotate(-2deg); }
+  }
+  @keyframes floatUp {
+    0%,100% { transform: translateY(0px); }
+    50%      { transform: translateY(-8px); }
+  }
+  @keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 20px rgba(245,180,0,0.3), 0 0 60px rgba(245,180,0,0.1); }
+    50%     { box-shadow: 0 0 40px rgba(245,180,0,0.6), 0 0 100px rgba(245,180,0,0.25); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes starSpin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  @keyframes badgeBounce {
+    0%,100% { transform: translateY(0) rotate(-3deg) scale(1); }
+    30%     { transform: translateY(-6px) rotate(3deg) scale(1.08); }
+    60%     { transform: translateY(-3px) rotate(-2deg) scale(1.04); }
+  }
+  @keyframes cloudPop {
+    0%   { transform: scale(0.8) rotate(-5deg); opacity:0; }
+    60%  { transform: scale(1.15) rotate(3deg); opacity:1; }
+    100% { transform: scale(1) rotate(-2deg); opacity:1; }
+  }
+
+  .vh-card {
+    border-radius: 24px; overflow: visible !important;
+    border: 3px solid var(--gold) !important;
+    position: relative;
+    animation: glowPulse 3s ease-in-out infinite, floatUp 4s ease-in-out infinite;
+    background: linear-gradient(135deg, #1a1200, #0f0c00) !important;
+    margin-top: 16px;
+  }
+  .vh-card:hover {
+    transform: translateY(-10px) scale(1.01) !important;
+    box-shadow: 0 40px 80px rgba(245,180,0,0.35) !important;
+  }
+
+  /* Kaboom cloud badge */
+  .kaboom-cloud {
+    position: absolute;
+    top: -38px; left: 50%;
+    transform: translateX(-50%);
+    animation: cloudPop 0.8s ease forwards, badgeBounce 2.5s 0.8s ease-in-out infinite;
+    z-index: 10;
+    white-space: nowrap;
+  }
+  .kaboom-cloud svg { overflow: visible; }
+  .kaboom-text {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 13px; fill: #0a0f1e; letter-spacing: 0.5px;
+  }
+
+  .vh-header {
+    background: linear-gradient(135deg, #2a1a00, #1a1000) !important;
+    border-bottom: 2px solid rgba(245,180,0,0.3) !important;
+    position: relative; overflow: hidden;
+  }
+  .vh-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(245,180,0,0.06), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  .vh-price-block {
+    background: linear-gradient(135deg, #1a1200, #120d00) !important;
+    border-bottom: 1px solid rgba(245,180,0,0.2);
+  }
+  .vh-price {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 44px !important;
+    background: linear-gradient(135deg, #F5B400, #ffda00, #F5B400);
+    background-size: 200% auto;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shimmer 2s linear infinite;
+  }
+  .vh-star { animation: starSpin 4s linear infinite; display: inline-block; }
+  .vh-inclusions { background: linear-gradient(135deg, #150f00, #0f0a00) !important; }
+  .vh-inc-list li::before { color: var(--gold) !important; content: '★' !important; }
+  .vh-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(245,180,0,0.15); border: 1px solid rgba(245,180,0,0.4);
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 11px; color: var(--gold); font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .vh-packages-note {
+    margin-top: 20px; padding: 22px 28px;
+    background: linear-gradient(135deg, rgba(245,180,0,0.08), rgba(245,180,0,0.03));
+    border: 1px solid rgba(245,180,0,0.3); border-radius: 14px;
+    font-size: 14px; color: #ffe066; line-height: 1.8;
+  }
+  .vh-sync-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px;
+  }
+  .vh-sync-card {
+    padding: 20px 18px;
+    background: linear-gradient(135deg, rgba(245,180,0,0.07), rgba(245,180,0,0.02));
+    border: 1px solid rgba(245,180,0,0.2); border-radius: 14px;
+    transition: all 0.25s;
+  }
+  .vh-sync-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .vh-sync-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .vh-sync-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 6px; color: var(--gold); }
+  .vh-sync-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  @media(max-width:768px) {
+    .vh-sync-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media(max-width:480px) {
+    .vh-sync-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -522,10 +648,149 @@
           </ul>
         </div>
       </div>
+
+      <!-- OPTION 3 — VILLAGE HUB -->
+      <div class="package-card vh-card" style="grid-column: 1 / -1; max-width: 620px; margin: 40px auto 0;">
+
+        <!-- KABOOM CLOUD BADGE -->
+        <div class="kaboom-cloud">
+          <svg width="280" height="56" viewBox="0 0 280 56">
+            <!-- Cloud burst shape -->
+            <path d="M20,28 Q10,14 22,10 Q28,0 40,6 Q50,-4 64,4 Q76,-6 90,4 Q104,-4 118,6 Q130,-2 144,6 Q158,-4 172,4 Q186,-6 200,4 Q214,-2 224,8 Q238,2 248,12 Q262,8 262,22 Q270,28 262,36 Q256,48 242,46 Q234,54 218,50 Q206,58 190,52 Q176,60 160,52 Q146,58 130,52 Q116,58 100,50 Q86,56 72,48 Q58,54 46,46 Q30,50 22,40 Q12,38 20,28 Z" fill="#F5B400"/>
+            <!-- Star bursts -->
+            <text x="14" y="20" font-size="10" fill="#0a0f1e">💥</text>
+            <text x="250" y="20" font-size="10" fill="#0a0f1e">💥</text>
+            <text x="14" y="46" font-size="8" fill="#0a0f1e">⭐</text>
+            <text x="253" y="44" font-size="8" fill="#0a0f1e">⭐</text>
+            <text class="kaboom-text" x="140" y="24" text-anchor="middle" font-size="11">🏆 BEST SELLING PACKAGE</text>
+            <text class="kaboom-text" x="140" y="40" text-anchor="middle" font-size="10">Most Accessible · Fastest to Launch</text>
+          </svg>
+        </div>
+
+        <div class="pkg-header vh-header" style="padding-top:32px;">
+          <div class="vh-tag"><span class="vh-star">⭐</span> New · Option 3 · Home-Based · Min. 15 sqm</div>
+          <div class="pkg-name" style="font-size:26px; color:#F5B400;">3DBotics® Village Hub</div>
+          <div style="font-size:14px; color:rgba(245,180,0,0.7); margin-top:6px; font-style:italic;">"Bring 3DBotics® Inside Your Neighborhood"</div>
+          <div class="pkg-space" style="margin-top:12px; background:rgba(245,180,0,0.1); color:#ffe066;">🏠 Home-Based · 1 Barangay Exclusivity</div>
+        </div>
+
+        <div class="pkg-price-block vh-price-block">
+          <div class="vh-price">₱199,000</div>
+          <div class="pkg-price-note" style="color:rgba(245,180,0,0.6);">All-In Village Hub Package · Barangay-Exclusive</div>
+          <div class="pkg-payment-steps">
+            <div class="pay-step"><span class="pay-num" style="background:rgba(245,180,0,0.2);color:var(--gold);">1</span><span class="pay-step-text"><strong>10% Reservation</strong> — ₱19,900 to secure your barangay</span></div>
+            <div class="pay-step"><span class="pay-num" style="background:rgba(245,180,0,0.2);color:var(--gold);">2</span><span class="pay-step-text"><strong>40% Equipment DP</strong> — ₱79,600 within 7 days</span></div>
+            <div class="pay-step"><span class="pay-num" style="background:rgba(245,180,0,0.2);color:var(--gold);">3</span><span class="pay-step-text"><strong>50% Final Payment</strong> — ₱99,500 before equipment delivery</span></div>
+          </div>
+        </div>
+
+        <div class="pkg-inclusions vh-inclusions">
+          <div class="pkg-inc-label" style="color:rgba(245,180,0,0.6);">What's Included</div>
+          <ul class="inc-list vh-inc-list">
+            <li>3 Brand New 3D Printers (calibrated for hands-on sessions)</li>
+            <li>5 kilos of 3D Printing Materials (assorted colors)</li>
+            <li>1 unit 32-inch TV or monitor for instruction</li>
+            <li>1 Branch Laptop (pre-loaded with all 3DBotics® software)</li>
+            <li>3 sets of complete 3D printing tools & USB Flash Drives</li>
+            <li>BattleBot & Robot sample display unit</li>
+            <li>Complete official marketing materials (signage, posters, templates)</li>
+            <li>Online access to all module outlines, facilitator guides & manuals</li>
+            <li>Initial Training: 2 full days face-to-face (INCLUDED)</li>
+            <li>Weekly Zoom coaching every Monday, 9:00AM–12:00NN (ongoing)</li>
+            <li>Full Digital AI-Platform access (student + parent + staff portals)</li>
+            <li>"3DBotics® Certified Village Hub" official signage & certification</li>
+          </ul>
+
+          <!-- HOW IT WORKS -->
+          <div style="margin-top:24px; padding:20px; background:rgba(245,180,0,0.06); border:1px solid rgba(245,180,0,0.2); border-radius:14px;">
+            <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:15px; color:var(--gold); margin-bottom:14px;">⚡ How the Village Hub Works</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--muted);">
+                <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">1</span>
+                Students study <strong style="color:var(--text);">3D Modelling & AI Coding online</strong> from home — at their own pace
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--muted);">
+                <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">2</span>
+                They <strong style="color:var(--text);">walk to the Village Hub</strong> for 3D Printing execution and Robot Assembly hands-on sessions
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--muted);">
+                <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">3</span>
+                Hub caters <strong style="color:var(--text);">White & Green Labgown students</strong> (beginner levels) — zero commute, community-embedded
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--muted);">
+                <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">4</span>
+                When students reach <strong style="color:var(--text);">Yellow Labgown</strong>, they graduate to the nearest full TechDojo branch — Hub owner earns a referral bonus
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--muted);">
+                <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">5</span>
+                Hub is <strong style="color:var(--text);">perpetually refilling</strong> — every graduating student creates a slot for a new beginner. No slow season.
+              </div>
+            </div>
+          </div>
+
+          
+<!-- VILLAGE HUB + FULL BRANCH SYNC -->
+<div class="section reveal" id="villagehub">
+  <span class="section-tag">Village Hub Ecosystem</span>
+  <h2 class="section-title">How Village Hubs & Full Branches <span>Work Together</span></h2>
+  <p class="section-sub">Village Hubs are not competition to full branches — they are the fuel. Every Hub feeds trained, engaged students directly into the full branch network.</p>
+  <div class="vh-sync-grid">
+    <div class="vh-sync-card"><span class="vh-sync-icon">🎓</span><div class="vh-sync-title">Graduation Pipeline</div><div class="vh-sync-desc">When a Hub student reaches Yellow Labgown, the nearest full branch is auto-notified via the portal. Hub owner earns a referral bonus. Branch gets a pre-trained student. Win-win every time.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🏆</span><div class="vh-sync-title">One National Leaderboard</div><div class="vh-sync-desc">Hub students and branch students compete on the same ranking board. A White Labgown from a barangay hub can outrank students from city branches. Pride has no address.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">⚔️</span><div class="vh-sync-title">BattleBot Saturday Circuit</div><div class="vh-sync-desc">Hub students compete in BattleBot rounds hosted at the nearest full branch. Branch gets the crowd and energy. Hub students get the competitive arena. Both win.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">📦</span><div class="vh-sync-title">Supply Chain Link</div><div class="vh-sync-desc">Hub owners order filament and materials through their paired full branch at cost. Branch earns a small margin. Hub gets fast local supply. No waiting for Main Office delivery.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🤝</span><div class="vh-sync-title">Mentor Branch Pairing</div><div class="vh-sync-desc">Every Hub is officially paired with one full branch. Monthly check-ins, curriculum support, and first right of refusal on all graduating Green students from that Hub.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">📣</span><div class="vh-sync-title">Co-Branded Marketing</div><div class="vh-sync-desc">Hub and paired branch run co-branded local posts. Hub owners are the most trusted voices in their barangay — their word-of-mouth feeds enrollment to both.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🎉</span><div class="vh-sync-title">Promote-Up Ceremony</div><div class="vh-sync-desc">When a student graduates from Green to Yellow, both the Hub and the full branch celebrate it together. Photos. Social media. The moment becomes marketing for the entire network.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">📈</span><div class="vh-sync-title">Hub-to-Branch Upgrade Path</div><div class="vh-sync-desc">A successful Hub owner who maxes out demand can upgrade to a full branch. Their ₱199,000 Hub fee is credited toward the full branch investment. Best operators stay and grow.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🏘️</span><div class="vh-sync-title">Always Refilling</div><div class="vh-sync-desc">Every student that graduates to a full branch opens a slot for a new White Labgown beginner at the Hub. The Village Hub is the permanent entry point of the entire 3DBotics® ecosystem — it never runs out of students.</div></div>
+  </div>
+</div>
+
+<!-- MONTHLY FEES -->
+          <div style="margin-top:16px; padding:18px 20px; background:rgba(245,180,0,0.04); border:1px solid rgba(245,180,0,0.15); border-radius:12px;">
+            <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:14px; color:var(--gold); margin-bottom:12px;">📋 Monthly Obligations</div>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:140px; text-align:center; padding:14px; background:rgba(245,180,0,0.08); border-radius:10px;">
+                <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:var(--gold);">₱495</div>
+                <div style="font-size:11px; color:var(--muted); margin-top:4px;">per active student / month<br/>AI Platform Fee</div>
+              </div>
+              <div style="flex:1; min-width:140px; text-align:center; padding:14px; background:rgba(245,180,0,0.08); border-radius:10px;">
+                <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:var(--gold);">₱1,000</div>
+                <div style="font-size:11px; color:var(--muted); margin-top:4px;">flat / month<br/>Brand License Fee</div>
+              </div>
+              <div style="flex:1; min-width:140px; text-align:center; padding:14px; background:rgba(245,180,0,0.08); border-radius:10px;">
+                <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:var(--gold);">₱0</div>
+                <div style="font-size:11px; color:var(--muted); margin-top:4px;">rental / month<br/>Use your own home</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="reveal" style="margin-top:20px; padding:20px 24px; background:rgba(245,180,0,0.06); border:1px dashed rgba(245,180,0,0.3); border-radius:12px; font-size:14px; color:#ffe066; line-height:1.7;">
       🔄 <strong>Renewal:</strong> At the end of your 3-year term, franchise renewal is available at <strong>30% of the original franchise cost</strong>. No need to start from scratch — your equipment, territory, and brand rights continue.
     </div>
+  </div>
+</div>
+
+
+<!-- VILLAGE HUB + FULL BRANCH SYNC -->
+<div class="section reveal" id="villagehub">
+  <span class="section-tag">Village Hub Ecosystem</span>
+  <h2 class="section-title">How Village Hubs & Full Branches <span>Work Together</span></h2>
+  <p class="section-sub">Village Hubs are not competition to full branches — they are the fuel. Every Hub feeds trained, engaged students directly into the full branch network.</p>
+  <div class="vh-sync-grid">
+    <div class="vh-sync-card"><span class="vh-sync-icon">🎓</span><div class="vh-sync-title">Graduation Pipeline</div><div class="vh-sync-desc">When a Hub student reaches Yellow Labgown, the nearest full branch is auto-notified via the portal. Hub owner earns a referral bonus. Branch gets a pre-trained student. Win-win every time.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🏆</span><div class="vh-sync-title">One National Leaderboard</div><div class="vh-sync-desc">Hub students and branch students compete on the same ranking board. A White Labgown from a barangay hub can outrank students from city branches. Pride has no address.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">⚔️</span><div class="vh-sync-title">BattleBot Saturday Circuit</div><div class="vh-sync-desc">Hub students compete in BattleBot rounds hosted at the nearest full branch. Branch gets the crowd and energy. Hub students get the competitive arena. Both win.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">📦</span><div class="vh-sync-title">Supply Chain Link</div><div class="vh-sync-desc">Hub owners order filament and materials through their paired full branch at cost. Branch earns a small margin. Hub gets fast local supply. No waiting for Main Office delivery.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🤝</span><div class="vh-sync-title">Mentor Branch Pairing</div><div class="vh-sync-desc">Every Hub is officially paired with one full branch. Monthly check-ins, curriculum support, and first right of refusal on all graduating Green students from that Hub.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">📣</span><div class="vh-sync-title">Co-Branded Marketing</div><div class="vh-sync-desc">Hub and paired branch run co-branded local posts. Hub owners are the most trusted voices in their barangay — their word-of-mouth feeds enrollment to both.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🎉</span><div class="vh-sync-title">Promote-Up Ceremony</div><div class="vh-sync-desc">When a student graduates from Green to Yellow, both the Hub and the full branch celebrate it together. Photos. Social media. The moment becomes marketing for the entire network.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">📈</span><div class="vh-sync-title">Hub-to-Branch Upgrade Path</div><div class="vh-sync-desc">A successful Hub owner who maxes out demand can upgrade to a full branch. Their ₱199,000 Hub fee is credited toward the full branch investment. Best operators stay and grow.</div></div>
+    <div class="vh-sync-card"><span class="vh-sync-icon">🏘️</span><div class="vh-sync-title">Always Refilling</div><div class="vh-sync-desc">Every student that graduates to a full branch opens a slot for a new White Labgown beginner at the Hub. The Village Hub is the permanent entry point of the entire 3DBotics® ecosystem — it never runs out of students.</div></div>
   </div>
 </div>
 
