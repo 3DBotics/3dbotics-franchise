@@ -328,6 +328,69 @@
     .rank-pill { min-width: 90px; padding: 14px 12px; }
   }
 
+  /* ─── GLOBAL MOBILE OVERFLOW FIX ─── */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  @media (max-width: 768px) {
+    /* Prevent ANY element from breaking out of viewport */
+    .section, .packages-wrap, .calc-wrap, .cta-section,
+    .stat-strip, .hero, nav, footer,
+    .what-grid, .benefits-grid, .packages-grid,
+    .form-wrap, .faq-wrap, .ranks-section {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    /* Village Hub card — disable the floating/glow animations on mobile, they cause reflow jank */
+    .vh-card {
+      animation: none !important;
+      overflow: hidden !important;
+    }
+    .best-seller-ribbon {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      transform: none !important;
+      animation: none !important;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    /* Rank pills — let them wrap instead of overflow */
+    .ranks-grid {
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+    .rank-pill {
+      min-width: 0;
+      flex: 1 1 80px;
+    }
+    /* Stat strip — stack vertically on very small screens */
+    .stat-strip {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    /* Hero heading — prevent giant text overflow */
+    .hero h1 {
+      font-size: clamp(32px, 8vw, 64px) !important;
+      word-break: break-word;
+    }
+    /* Package cards */
+    .package-card {
+      max-width: 100%;
+      overflow: hidden;
+    }
+    /* Form */
+    .form-wrap {
+      padding: 24px 16px !important;
+      margin: 0 16px !important;
+      max-width: calc(100vw - 32px) !important;
+    }
+  }
+
   
   /* ─── OPTION 3 VILLAGE HUB SPECIAL STYLES ─── */
   @keyframes floatUp {
