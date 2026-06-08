@@ -1321,6 +1321,26 @@ async function submitForm() {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
+  try {
+    await fetch('/api/inquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, city, pkg })
+    });
+  } catch(e) {
+    console.log('Submission error:', e);
+  }
+
+  if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
+
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+
+  const btn = document.querySelector('.submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
   // 1. Send email via Resend API
   try {
     await fetch('https://api.resend.com/emails', {
