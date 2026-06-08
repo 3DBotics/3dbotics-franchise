@@ -30,8 +30,8 @@ export default async function handler(req, res) {
             </div>
             <table style="width:100%;border-collapse:collapse;">
               <tr><td style="padding:12px 0;border-bottom:1px solid #1e293b;color:#8899aa;width:160px;font-size:13px;">Full Name</td><td style="padding:12px 0;border-bottom:1px solid #1e293b;font-weight:700;font-size:15px;">${name}</td></tr>
-              <tr><td style="padding:12px 0;border-bottom:1px solid #1e293b;color:#8899aa;font-size:13px;">Contact Number</td><td style="padding:12px 0;border-bottom:1px solid #1e293b;font-weight:700;font-size:15px;"><a href="tel:${phone}" style="color:#4BBFBF;">${phone}</a></td></tr>
-              <tr><td style="padding:12px 0;border-bottom:1px solid #1e293b;color:#8899aa;font-size:13px;">Email</td><td style="padding:12px 0;border-bottom:1px solid #1e293b;font-weight:700;font-size:15px;"><a href="mailto:${email}" style="color:#4BBFBF;">${email}</a></td></tr>
+              <tr><td style="padding:12px 0;border-bottom:1px solid #1e293b;color:#8899aa;font-size:13px;">Contact Number</td><td style="padding:12px 0;border-bottom:1px solid #1e293b;font-weight:700;font-size:15px;">${phone}</td></tr>
+              <tr><td style="padding:12px 0;border-bottom:1px solid #1e293b;color:#8899aa;font-size:13px;">Email</td><td style="padding:12px 0;border-bottom:1px solid #1e293b;font-weight:700;font-size:15px;">${email}</td></tr>
               <tr><td style="padding:12px 0;border-bottom:1px solid #1e293b;color:#8899aa;font-size:13px;">City / Location</td><td style="padding:12px 0;border-bottom:1px solid #1e293b;font-weight:700;font-size:15px;">${city}</td></tr>
               <tr><td style="padding:12px 0;color:#8899aa;font-size:13px;">Package Interest</td><td style="padding:12px 0;font-weight:700;font-size:15px;color:#F5B400;">${pkg || 'Not specified'}</td></tr>
             </table>
