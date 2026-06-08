@@ -1040,22 +1040,37 @@ document.getElementById('rentSlider').addEventListener('input', updateCalc);
 document.getElementById('salarySlider').addEventListener('input', updateCalc);
 updateCalc();
 
-function submitForm() {
+async function submitForm() {
   const name = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
   const email = document.getElementById('femail').value.trim();
   const city = document.getElementById('fcity').value.trim();
+  const pkg = document.getElementById('fpackage').value || 'Not specified';
+
   if (!name || !phone || !email || !city) {
     alert('Please fill in all required fields.');
     return;
   }
-  // Send to WhatsApp / mailto as fallback (replace with your API endpoint if needed)
-  const msg = `New Franchise Inquiry!\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nCity: ${city}\nPackage: ${document.getElementById('fpackage').value || 'Not specified'}`;
-  const waURL = `https://wa.me/639XXXXXXXXX?text=${encodeURIComponent(msg)}`;
-  document.getElementById('formContent').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  // Optional: open WhatsApp in new tab
-  // window.open(waURL, '_blank');
+
+  const btn = document.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('/api/inquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, city, pkg })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Submission failed');
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = '🚀 Submit My Inquiry';
+    alert('Something went wrong: ' + err.message + '\nPlease try again or contact us directly.');
+  }
 }
 
 document.querySelectorAll('.faq-q').forEach(q => {

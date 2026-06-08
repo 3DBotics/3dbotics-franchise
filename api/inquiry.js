@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: '3DBotics® Franchise <onboarding@resend.dev>',
+        from: '3DBotics® Franchise <noreply@3dbotics.ph>',
         to: 'toydemic@gmail.com',
         reply_to: email || 'noreply@franchise.3dbotics.ph',
         subject: `🚀 New Franchise Inquiry — ${name} (${city})`,
