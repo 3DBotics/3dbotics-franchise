@@ -1238,7 +1238,7 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
 
   <div class="or-divider" style="max-width:520px;margin:0 auto 20px;">or</div>
   <div class="cta-alt">
-    📞 Call us directly: <strong style="color:var(--text);">0995 836 2249</strong> &nbsp;·&nbsp; franchise@3dbotics.ph
+    📞 Call us directly: <strong style="color:var(--text);">0995 836 2249</strong>
   </div>
 </section>
 
@@ -1310,7 +1310,7 @@ async function submitForm() {
         'Authorization': 'Bearer RESEND_API_KEY_HERE'
       },
       body: JSON.stringify({
-        from: 'franchise@3dbotics.ph',
+        from: 'toydemic@gmail.com',
         to: 'toydemic@gmail.com',
         subject: `🚀 New Franchise Inquiry — ${name} (${city})`,
         html: `
@@ -1337,19 +1337,7 @@ async function submitForm() {
   }
 
   // 2. Open WhatsApp with pre-filled message
-  const waMsg = `🚀 *New 3DBotics® Franchise Inquiry*
-
-*Name:* ${name}
-*Phone:* ${phone}
-*Email:* ${email}
-*City:* ${city}
-*Package:* ${pkg}
-
-_Submitted via franchise.3dbotics.ph_`;
-  const waURL = `https://wa.me/639958362249?text=${encodeURIComponent(waMsg)}`;
-  window.open(waURL, '_blank');
-
-  // 3. Track Lead conversion in Facebook Pixel
+    // 3. Track Lead conversion in Facebook Pixel
   if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
   // 3. Show success
   document.getElementById('formContent').style.display = 'none';
