@@ -884,13 +884,13 @@
       <span class="fee-icon">🤖</span>
       <div class="fee-amount teal">₱495</div>
       <div class="fee-label">per active student / month</div>
-      <div class="fee-desc">AI Platform Access Fee — covers each student's access to the Full Digital AI-Platform. Collected from tuition, remitted to Main Office by the 1st of each month.</div>
+      <div class="fee-desc">AI Platform Access Fee — payment for the TechDojo Portal, the Full Digital AI-Platform that gives each active student access. Collected from tuition, remitted to Main Office every 5th of the month.</div>
     </div>
     <div class="fee-card reveal" style="transition-delay:0.1s">
       <span class="fee-icon">🏷️</span>
-      <div class="fee-amount gold">₱2,000</div>
+      <div class="fee-amount gold">₱3,000</div>
       <div class="fee-label">flat per branch / month</div>
-      <div class="fee-desc">Trademark & Brand License Fee — covers your continued right to use the 3DBotics® name, logo, national marketing support, and access to the full TechDojo System methodology.</div>
+      <div class="fee-desc">Trademark & Brand License Fee — payment for the 3DBotics® brand: your continued right to use the name and logo, national marketing support, and access to the full TechDojo System methodology. Due every 5th of the month.</div>
     </div>
     <div class="fee-card reveal" style="transition-delay:0.2s">
       <span class="fee-icon">🎓</span>
@@ -1003,7 +1003,7 @@
     <div class="faq-item"><div class="faq-q">How many students do I need to break even monthly?<span class="faq-arrow">▼</span></div><div class="faq-a">With the minimum tuition of ₱3,995/student and typical overhead (rent, salary, fees), most branches break even with 15–20 active students per month. Most branches exceed this within their first 3 months.</div></div>
     <div class="faq-item"><div class="faq-q">Is the franchise fee inclusive of everything I need?<span class="faq-arrow">▼</span></div><div class="faq-a">Yes — both packages are all-in. Equipment, tools, laptop, curriculum, training, marketing materials, and AI-Platform access are all included. You provide the space (rent), a facilitator (salary), and utilities. No surprise costs.</div></div>
     <div class="faq-item"><div class="faq-q">Can I set my own tuition rates?<span class="faq-arrow">▼</span></div><div class="faq-a">Yes, but only above the minimum floor rate of ₱3,995/month per student. You may charge more based on your local market. You may never charge below ₱3,995 — this protects the brand's value across all branches.</div></div>
-    <div class="faq-item"><div class="faq-q">Are there royalty fees or percentage-based charges?<span class="faq-arrow">▼</span></div><div class="faq-a">No. 3DBotics® does not collect royalties or take a percentage of your revenue. Your only monthly obligations are ₱495/active student (AI Platform fee) and ₱2,000 flat (brand license). Everything else is yours to keep.</div></div>
+    <div class="faq-item"><div class="faq-q">Are there royalty fees or percentage-based charges?<span class="faq-arrow">▼</span></div><div class="faq-a">No. 3DBotics® does not collect royalties or take a percentage of your revenue. Your only monthly obligations are ₱495/active student (AI Platform fee) and ₱3,000 flat (brand license), both due every 5th of the month. Everything else is yours to keep.</div></div>
     <div class="faq-item"><div class="faq-q">What is the franchise term and what are the renewal terms?<span class="faq-arrow">▼</span></div><div class="faq-a">The franchise term is 3 years. Renewal is available at 30% of your original franchise cost — so if you took Option 2 (₱660,000), renewal is ₱198,000. Your city exclusivity and brand rights continue.</div></div>
     <div class="faq-item"><div class="faq-q">What if my city is already taken?<span class="faq-arrow">▼</span></div><div class="faq-a">If your primary city is taken by a Master Franchisee, you may still open within the city — but must be located outside the 8km radius from the existing branch. In this case, a royalty fee to the Master Franchisee applies, the details of which will be discussed during your discovery call.</div></div>
     <div class="faq-item"><div class="faq-q">What age group does TechDojo cater to?<span class="faq-arrow">▼</span></div><div class="faq-a">TechDojo serves three groups: Kids (ages 6–12), Teens (ages 13–19), and Adults (ages 20 and above). Flexible schedules allow all age groups to co-exist in the same branch with different time slots.</div></div>
@@ -1090,7 +1090,7 @@ function updateCalc() {
   document.getElementById('studentCount').textContent = students;
   document.getElementById('rentAmount').textContent = formatPeso(rent);
   document.getElementById('salaryAmount').textContent = formatPeso(salary);
-  const tuition = 3995, aiPlatformFee = 495, brandFee = 2000, utilities = 3500;
+  const tuition = 3995, aiPlatformFee = 495, brandFee = 3000, utilities = 3500;
   const grossIncome = students * tuition;
   const aiRemittance = students * aiPlatformFee;
   const totalExpenses = aiRemittance + brandFee + rent + salary + utilities;
@@ -1098,7 +1098,7 @@ function updateCalc() {
   document.getElementById('grossIncome').textContent = formatPeso(grossIncome);
   document.getElementById('incomeBreakdown').textContent = `${students} students × ₱3,995/month minimum tuition`;
   document.getElementById('totalExpenses').textContent = formatPeso(totalExpenses);
-  document.getElementById('expensesBreakdown').textContent = `AI Fee: ₱${(students*495).toLocaleString()} + Brand: ₱2,000 + Rent: ₱${rent.toLocaleString()} + Salary: ₱${salary.toLocaleString()} + Utilities: ₱3,500`;
+  document.getElementById('expensesBreakdown').textContent = `AI Fee: ₱${(students*495).toLocaleString()} + Brand: ₱3,000 + Rent: ₱${rent.toLocaleString()} + Salary: ₱${salary.toLocaleString()} + Utilities: ₱3,500`;
   document.getElementById('netProfit').textContent = formatPeso(netProfit);
   document.getElementById('profitNote').textContent = netProfit > 0
     ? `Your take-home profit after all fees and expenses at ${students} students.`
