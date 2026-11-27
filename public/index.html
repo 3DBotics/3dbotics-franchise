@@ -359,7 +359,7 @@
   /* ─── BOOM BURST CALLOUTS (package deadlines) ─── */
   @keyframes boomPop {
     0%,100% { transform: rotate(-3deg) scale(1); }
-    50%     { transform: rotate(-3deg) scale(1.06); }
+    50%     { transform: rotate(-3deg) scale(1.035); }
   }
   @keyframes boomSpin {
     0%   { transform: rotate(0deg); }
@@ -374,7 +374,7 @@
   .boom {
     position: relative; width: 100%; max-width: 460px; aspect-ratio: 1.7 / 1;
     display: flex; align-items: center; justify-content: center;
-    animation: boomPop 1.6s ease-in-out infinite;
+    animation: boomPop 3s ease-in-out infinite;
     filter: drop-shadow(0 8px 18px rgba(0,0,0,0.55));
   }
   .boom::before, .boom::after {
