@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Own a 3DBotics® TechDojo Franchise — The Future of Education is Yours</title>
 
-<meta name="description" content="Own a 3DBotics® TechDojo Franchise — Philippines' #1 AI, 3D Printing & Robotics learning franchise. 52+ branches. Village Hub from ₱330,000. Full Center from ₱880,000. Earn ₱200K–₱1M+/month."/>
+<meta name="description" content="Own a 3DBotics® TechDojo Franchise — Philippines' #1 AI, 3D Printing & Robotics learning franchise. 52+ branches. Semi Center from ₱660,000. Full Center from ₱880,000. Earn ₱200K–₱1M+/month."/>
 
 <!-- Open Graph / Facebook / Messenger -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://franchise.3dbotics.ph"/>
 <meta property="og:title" content="Own a 3DBotics® TechDojo Franchise — Earn ₱200K–₱1M+/month"/>
-<meta property="og:description" content="Philippines' #1 AI, 3D Printing &amp; Robotics learning franchise. Village Hub from ₱330,000 — run it from your home. Full Center from ₱880,000. 52+ branches nationwide. Main Office handles the marketing. You just open your door."/>
+<meta property="og:description" content="Philippines' #1 AI, 3D Printing &amp; Robotics learning franchise. Semi Center from ₱660,000. Full Center from ₱880,000. 52+ branches nationwide. Main Office handles the marketing. You just open your door."/>
 <meta property="og:image" content="https://franchise.3dbotics.ph/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -22,12 +22,12 @@
 <!-- Twitter / Viber card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Own a 3DBotics® TechDojo Franchise"/>
-<meta name="twitter:description" content="Village Hub from ₱330,000. Full Center from ₱880,000. Earn ₱200K–₱1M+/month. 52+ branches. Main Office handles marketing."/>
+<meta name="twitter:description" content="Semi Center from ₱660,000. Full Center from ₱880,000. Earn ₱200K–₱1M+/month. 52+ branches. Main Office handles marketing."/>
 <meta name="twitter:image" content="https://franchise.3dbotics.ph/og-image.png"/>
 
 <!-- WhatsApp / iMessage -->
 <meta itemprop="name" content="Own a 3DBotics® TechDojo Franchise"/>
-<meta itemprop="description" content="Village Hub from ₱330,000. Earn ₱200K–₱1M+/month from your home. Philippines' #1 AI &amp; Robotics franchise."/>
+<meta itemprop="description" content="Full Center from ₱880,000. Earn ₱200K–₱1M+/month. Philippines' #1 AI &amp; Robotics franchise."/>
 <meta itemprop="image" content="https://franchise.3dbotics.ph/og-image.png"/>
 
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -355,6 +355,57 @@
   }
 
   
+
+  /* ─── BOOM BURST CALLOUTS (package deadlines) ─── */
+  @keyframes boomPop {
+    0%,100% { transform: rotate(-3deg) scale(1); }
+    50%     { transform: rotate(-3deg) scale(1.06); }
+  }
+  @keyframes boomSpin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .boom-wrap {
+    position: relative; display: flex; justify-content: center; align-items: center;
+    padding: 26px 16px 18px; border-bottom: 1px solid var(--border);
+  }
+  .boom-wrap.opt1 { background: linear-gradient(135deg, #0d2438, #112233); }
+  .boom-wrap.opt2 { background: linear-gradient(135deg, #1a1020, #141020); }
+  .boom {
+    position: relative; width: 100%; max-width: 460px; aspect-ratio: 1.7 / 1;
+    display: flex; align-items: center; justify-content: center;
+    animation: boomPop 1.6s ease-in-out infinite;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.55));
+  }
+  .boom::before, .boom::after {
+    content: ''; position: absolute; clip-path: polygon(50.0% 0.0%, 55.7% 10.4%, 64.1% 2.0%, 66.6% 13.6%, 77.0% 7.9%, 76.2% 19.8%, 87.8% 17.3%, 83.7% 28.4%, 95.5% 29.2%, 88.4% 38.7%, 99.5% 42.9%, 90.0% 50.0%, 99.5% 57.1%, 88.4% 61.3%, 95.5% 70.8%, 83.7% 71.6%, 87.8% 82.7%, 76.2% 80.2%, 77.0% 92.1%, 66.6% 86.4%, 64.1% 98.0%, 55.7% 89.6%, 50.0% 100.0%, 44.3% 89.6%, 35.9% 98.0%, 33.4% 86.4%, 23.0% 92.1%, 23.8% 80.2%, 12.2% 82.7%, 16.3% 71.6%, 4.5% 70.8%, 11.6% 61.3%, 0.5% 57.1%, 10.0% 50.0%, 0.5% 42.9%, 11.6% 38.7%, 4.5% 29.2%, 16.3% 28.4%, 12.2% 17.3%, 23.8% 19.8%, 23.0% 7.9%, 33.4% 13.6%, 35.9% 2.0%, 44.3% 10.4%);
+  }
+  .boom::before { inset: 0; }
+  .boom::after  { inset: 9% 6%; }
+  .boom-red::before  { background: #E84C24; }
+  .boom-red::after   { background: radial-gradient(circle at 50% 40%, #fff27a, #F5B400 70%); }
+  .boom-gold::before { background: #F5B400; }
+  .boom-gold::after  { background: radial-gradient(circle at 50% 40%, #ff8a5c, #E84C24 70%); }
+  .boom-text {
+    position: relative; z-index: 2; text-align: center; width: 66%;
+    font-family: 'Syne', sans-serif; font-weight: 800; text-transform: uppercase;
+    line-height: 1.12; letter-spacing: 0.3px;
+  }
+  .boom-red .boom-text { color: #0a0f1e; }
+  .boom-gold .boom-text { color: #ffffff; text-shadow: 0 2px 0 rgba(0,0,0,0.35); }
+  .boom-kicker { display: block; font-size: clamp(11px, 2.6vw, 13px); letter-spacing: 2px; margin-bottom: 4px; }
+  .boom-big { display: block; font-size: clamp(18px, 5vw, 26px); }
+  @media (max-width: 520px) {
+    .boom-text { width: 74%; }
+    .boom-kicker { letter-spacing: 0.5px; font-size: 11px; }
+    .boom-big { font-size: 17px; }
+    .boom-small { font-size: 11px; }
+    .pkg-featured-tag { position: static; display: inline-block; margin-bottom: 10px; }
+  }
+  .boom-small { display: block; font-size: clamp(11px, 2.8vw, 14px); margin-top: 4px; }
+  .boom-red .boom-big { color: #c0300d; }
+  @media (prefers-reduced-motion: reduce) { .boom { animation: none; transform: rotate(-3deg); } }
+
   /* ─── OPTION 3 VILLAGE HUB SPECIAL STYLES ─── */
   @keyframes floatUp {
     0%,100% { transform: translateY(0px); }
@@ -783,7 +834,7 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
     <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:42px; color:var(--gold); margin-bottom:8px;">₱200K – ₱1M+</div>
     <div style="font-size:14px; color:var(--muted); max-width:560px; margin:0 auto; line-height:1.7;">From a single 3DBotics® branch — combining enrollment, services, events, and partnerships. Almost <strong style="color:var(--text);">zero direct competition</strong> in most Philippine cities. The pioneers who open now will own their market for years.</div>
     <div style="margin-top:20px; display:inline-flex; align-items:center; gap:10px; background:rgba(245,180,0,0.1); border:1px solid rgba(245,180,0,0.3); border-radius:100px; padding:10px 24px; font-size:13px; font-weight:600; color:var(--gold);">
-      🚀 Grab your city or village slot now — before a pioneer in your area does
+      🚀 Grab your city slot now — before a pioneer in your area does
     </div>
   </div>
 </div>
@@ -801,143 +852,18 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
     <div class="packages-grid reveal">
 
       <!-- ═══════════════════════════════════════════════════════════
-           OPTION 3 — VILLAGE HUB  (FULL WIDTH, ON TOP)
-      ═══════════════════════════════════════════════════════════ -->
-      <div class="package-card vh-card" style="grid-column:1/-1;">
-
-        <!-- BEST SELLER LABEL — big font, high contrast, no cloud -->
-        <div style="
-          background: #F5B400;
-          color: #0a0f1e;
-          font-family: 'Syne', sans-serif;
-          font-weight: 800;
-          font-size: 18px;
-          letter-spacing: 1px;
-          text-align: center;
-          padding: 14px 20px;
-          text-transform: uppercase;
-          width: 100%;
-        ">
-          🏆 &nbsp;BEST SELLING PACKAGE &nbsp;·&nbsp; MOST ACCESSIBLE &nbsp;·&nbsp; FASTEST TO LAUNCH 🚀
-        </div>
-
-        <div class="pkg-header vh-header">
-          <div class="vh-tag"><span class="vh-star">⭐</span> Option 3 · Home-Based · Minimum 15 sqm · Per Village</div>
-          <div class="pkg-name" style="font-size:28px; color:#F5B400;">3DBotics® Village Hub</div>
-          <div style="font-size:14px; color:rgba(245,180,0,0.7); margin-top:6px; font-style:italic;">"Bring 3DBotics® Inside Your Neighborhood"</div>
-          <div style="margin-top:20px; padding:20px 24px; background:linear-gradient(135deg, rgba(245,180,0,0.18), rgba(245,180,0,0.08)); border:2px solid rgba(245,180,0,0.6); border-radius:14px;">
-          <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:28px; color:#F5B400; line-height:1.2; margin-bottom:8px;">
-            🏘️ 1 Village Hub Per Village or Subdivision
-          </div>
-          <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.6;">
-            Your village is <strong style="color:#F5B400;">exclusively yours.</strong> No other 3DBotics® Hub can open inside your residential community for the entire duration of your franchise term.
-          </div>
-        </div>
-        </div>
-
-        <div class="pkg-price-block vh-price-block">
-          <div class="vh-price">₱330,000</div>
-          <div class="pkg-price-note" style="color:rgba(245,180,0,0.6);">All-In Village Hub Package · Village/Subdivision Exclusive</div>
-          <div class="pkg-payment-steps">
-            <div class="pay-step">
-              <span class="pay-num" style="background:rgba(245,180,0,0.2);color:var(--gold);">1</span>
-              <span class="pay-step-text"><strong>10% Reservation</strong> — ₱33,000 to secure your village/subdivision slot</span>
-            </div>
-            <div class="pay-step">
-              <span class="pay-num" style="background:rgba(245,180,0,0.2);color:var(--gold);">2</span>
-              <span class="pay-step-text"><strong>40% Equipment DP</strong> — ₱132,000 within 7 days</span>
-            </div>
-            <div class="pay-step">
-              <span class="pay-num" style="background:rgba(245,180,0,0.2);color:var(--gold);">3</span>
-              <span class="pay-step-text"><strong>50% Final Payment</strong> — ₱165,000 before equipment delivery</span>
-            </div>
-          </div>
-<div style="margin-top:12px;padding:10px 14px;background:rgba(75,191,191,0.06);border:1px solid rgba(75,191,191,0.2);border-radius:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-            <span style="font-size:12px;color:var(--teal);font-weight:700;">💳 We Accept:</span>
-            <span style="font-size:12px;color:var(--muted);">Visa · Mastercard · GCash · Maya · Bank Transfer · Credit Card Installment</span>
-          </div>
-        </div>
-
-        <div class="pkg-inclusions vh-inclusions">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
-
-            <!-- LEFT: Inclusions -->
-            <div>
-              <div class="pkg-inc-label" style="color:rgba(245,180,0,0.6);">What's Included</div>
-              <ul class="inc-list vh-inc-list">
-                <li>4 Brand New 3D Printers (calibrated for hands-on sessions)</li>
-                <li>8 kilos of 3D Printing Filament (assorted colors)</li>
-                <li>1 Branch Laptop (pre-loaded with all 3DBotics® software)</li>
-                <li>4 sets of complete 3D printing tools</li>
-                <li>1 RoboGames Arena Table (for BattleBot sessions)</li>
-                <li>BattleBot & Robot sample display unit</li>
-                <li>Complete official marketing materials (signage, posters)</li>
-                <li>Online access to all module outlines & facilitator guides</li>
-                <li>Initial Training: 2 full days face-to-face (INCLUDED)</li>
-                <li>Weekly Zoom coaching every Monday, 9:00AM–12:00NN</li>
-                <li>Full Digital AI-Platform access (student + parent + staff)</li>
-                <li>"3DBotics® Certified Village Hub" official signage</li>
-              </ul>
-            </div>
-
-            <!-- RIGHT: How it works + Monthly fees -->
-            <div>
-              <div class="pkg-inc-label" style="color:rgba(245,180,0,0.6);">How It Works</div>
-              <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
-                <div style="display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);">
-                  <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">1</span>
-                  <span>Main Office markets and captures online students. Students study <strong style="color:var(--text);">3D Modelling & AI Coding</strong> from home.</span>
-                </div>
-                <div style="display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);">
-                  <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">2</span>
-                  <span>For <strong style="color:var(--text);">3D Printing & Robot Assembly</strong>, students walk to their Village Hub — no commute, community-embedded.</span>
-                </div>
-                <div style="display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);">
-                  <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">3</span>
-                  <span>Students pay Hub <strong style="color:var(--text);">₱1,995/month</strong>. Hub keeps ₱1,500, remits ₱495 AI Platform Fee to Main Office.</span>
-                </div>
-                <div style="display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);">
-                  <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">4</span>
-                  <span>Hub serves <strong style="color:var(--text);">White & Green Labgown</strong> students. At Yellow, they graduate to the nearest full TechDojo branch.</span>
-                </div>
-                <div style="display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);">
-                  <span style="background:rgba(245,180,0,0.2);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">5</span>
-                  <span><strong style="color:#F5B400;">Main Office does the marketing. You just open your doors.</strong></span>
-                </div>
-              </div>
-
-              <!-- Monthly Obligations -->
-              <div style="padding:16px; background:rgba(245,180,0,0.06); border:1px solid rgba(245,180,0,0.2); border-radius:12px;">
-                <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--gold);margin-bottom:12px;">📋 Village Hub Monthly Obligations</div>
-                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
-                  <div style="flex:1;min-width:100px;text-align:center;padding:12px 8px;background:rgba(245,180,0,0.08);border-radius:8px;">
-                    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--gold);">₱495</div>
-                    <div style="font-size:10px;color:var(--muted);margin-top:3px;">per student/month<br/>AI Platform Fee</div>
-                  </div>
-                  <div style="flex:1;min-width:100px;text-align:center;padding:12px 8px;background:rgba(245,180,0,0.08);border-radius:8px;">
-                    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--gold);">₱1,000</div>
-                    <div style="font-size:10px;color:var(--muted);margin-top:3px;">flat/month<br/>Brand License Fee</div>
-                  </div>
-                  <div style="flex:1;min-width:100px;text-align:center;padding:12px 8px;background:rgba(245,180,0,0.08);border-radius:8px;">
-                    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#16a34a;">₱0</div>
-                    <div style="font-size:10px;color:var(--muted);margin-top:3px;">rental/month<br/>Use your home</div>
-                  </div>
-                </div>
-                <div style="font-size:12px;color:var(--muted);line-height:1.7;padding:10px 12px;background:rgba(75,191,191,0.05);border-radius:8px;">
-                  💡 <strong style="color:var(--text);">Example:</strong> 20 students × ₱1,995 = <strong style="color:var(--gold);">₱39,900 gross.</strong> Minus ₱9,900 (AI fees) + ₱1,000 (brand) = <strong style="color:#16a34a;">₱29,000 net/month — from your home.</strong>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <!-- END OPTION 3 -->
-
-      <!-- ═══════════════════════════════════════════════════════════
            OPTION 1 — FULL CENTER
       ═══════════════════════════════════════════════════════════ -->
       <div class="package-card featured">
+        <div class="boom-wrap opt1">
+          <div class="boom boom-red" role="note" aria-label="P1.5 Million comes January 01, 2027 so grab it now">
+            <div class="boom-text">
+              <span class="boom-kicker">💥 Price Increase 💥</span>
+              <span class="boom-big">₱1.5 Million</span>
+              <span class="boom-small">comes January 01, 2027<br/>so grab it now!</span>
+            </div>
+          </div>
+        </div>
         <div class="pkg-header opt1">
           <span class="pkg-featured-tag">⭐ Most Complete</span>
           <div class="pkg-option">Option 1 · Full Center · Minimum 30 sqm</div>
@@ -983,6 +909,16 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
            OPTION 2 — SEMI CENTER
       ═══════════════════════════════════════════════════════════ -->
       <div class="package-card">
+        <div class="boom-wrap opt2">
+          <div class="boom boom-gold" role="note" aria-label="This option will be discontinued comes January 1, 2027">
+            <div class="boom-text">
+              <span class="boom-kicker">⚠️ Last Call ⚠️</span>
+              <span class="boom-small" style="margin-top:0;">This option will be</span>
+              <span class="boom-big">Discontinued</span>
+              <span class="boom-small">comes January 1, 2027</span>
+            </div>
+          </div>
+        </div>
         <div class="pkg-header opt2">
           <div class="pkg-option">Option 2 · Semi Center · Minimum 25 sqm</div>
           <div class="pkg-name">Semi 3DBotics®<br/>TechDojo Center</div>
@@ -1025,7 +961,10 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
     </div><!-- end packages-grid -->
 
     <div class="reveal" style="margin-top:20px; padding:20px 24px; background:rgba(245,180,0,0.06); border:1px dashed rgba(245,180,0,0.3); border-radius:12px; font-size:14px; color:#ffe066; line-height:1.7;">
-      🏙️ <strong>City Exclusivity Guaranteed.</strong> One franchise per city (Options 1 & 2). One Village Hub per village/subdivision (Option 3). Slots are first-come, first-served — secured upon 10% reservation.
+      🏙️ <strong>City Exclusivity Guaranteed.</strong> One franchise per city. Slots are first-come, first-served — secured upon 10% reservation.
+    </div>
+    <div class="reveal" style="margin-top:12px; padding:20px 24px; background:rgba(75,191,191,0.04); border:1px dashed rgba(75,191,191,0.2); border-radius:12px; font-size:14px; color:#ffe066; line-height:1.7;">
+      👑 <strong>Master Franchisee Advantage:</strong> The first full branch in a city is the Master Franchisee. Any branch that opens later within that city must be outside the 8km radius and pay royalties to the Master Franchisee. First mover wins permanently.
     </div>
     <div class="reveal" style="margin-top:12px; padding:20px 24px; background:rgba(75,191,191,0.04); border:1px dashed rgba(75,191,191,0.2); border-radius:12px; font-size:14px; color:#ffe066; line-height:1.7;">
       🔄 <strong>Renewal:</strong> At the end of your 3-year term, renewal is available at <strong>30% of your original franchise cost</strong>.
@@ -1035,29 +974,11 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
 </div>
 
 
-<!-- VILLAGE HUB + FULL BRANCH SYNC -->
-<div class="section reveal" id="villagehub">
-  <span class="section-tag">Village Hub Ecosystem</span>
-  <h2 class="section-title">How Village Hubs & Full Branches <span>Work Together</span></h2>
-  <p class="section-sub">Village Hubs are not competition to full branches — they are the fuel. Every Hub feeds trained, engaged students directly into the full branch network.</p>
-  <div class="vh-sync-grid">
-    <div class="vh-sync-card"><span class="vh-sync-icon">🎓</span><div class="vh-sync-title">Graduation Pipeline</div><div class="vh-sync-desc">When a Hub student reaches Yellow Labgown, the nearest full branch is notified via the portal. Hub owner earns a referral bonus. Branch gets a pre-trained, motivated student. Win-win every time.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">🏆</span><div class="vh-sync-title">One National Leaderboard</div><div class="vh-sync-desc">Hub students and full branch students compete on the same national ranking board. A student from a village hub can outrank students from city branches. Pride has no address.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">⚔️</span><div class="vh-sync-title">BattleBot Competitions</div><div class="vh-sync-desc">Village Hubs have their own RoboGames Arena Table for local sparring. Hub students can also join BattleBot competitions hosted at the nearest full branch — expanding their competitive arena.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">📦</span><div class="vh-sync-title">Supply Chain Link</div><div class="vh-sync-desc">Hub owners order filament and materials through their paired full branch at cost. Branch earns a small margin. Hub gets fast local supply without waiting for Main Office delivery.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">🎉</span><div class="vh-sync-title">Promote-Up Ceremony</div><div class="vh-sync-desc">When a student graduates from Green to Yellow, both the Hub and the full branch celebrate publicly. Photos, social media, community pride — every ceremony is organic marketing for the entire network.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">📈</span><div class="vh-sync-title">Hub-to-Branch Upgrade Path</div><div class="vh-sync-desc">A successful Hub owner who maxes out demand can upgrade to a full branch. Their ₱330,000 Hub investment is credited toward the full branch cost. Best operators stay and grow.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">📣</span><div class="vh-sync-title">Co-Branded Local Marketing</div><div class="vh-sync-desc">Hub and paired branch run co-branded posts. Hub owners are the most trusted voices in their community — their word-of-mouth drives enrollment for both.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">🏘️</span><div class="vh-sync-title">Always Refilling</div><div class="vh-sync-desc">Every student that graduates to a full branch opens a slot for a new White Labgown beginner. The Village Hub is the permanent entry point of the entire 3DBotics® ecosystem — it never runs out of students.</div></div>
-    <div class="vh-sync-card"><span class="vh-sync-icon">👑</span><div class="vh-sync-title">Master Franchisee Advantage</div><div class="vh-sync-desc">The first full branch in a city is the Master Franchisee. Any branch that opens later within that city must be outside the 8km radius and pay royalties to the Master Franchisee. First mover wins permanently.</div></div>
-  </div>
-</div>
-
 <!-- MONTHLY FEES -->
 <div class="section reveal" id="fees">
   <span class="section-tag">Monthly Obligations</span>
   <h2 class="section-title">Full Branch <span>Monthly Fees</span></h2>
-  <p class="section-sub">For Option 1 and Option 2 full branches only. No royalty on revenue. No percentage of sales. Just two flat monthly fees — that's it. <em style="color:var(--gold);">(Village Hub has its own separate fee structure shown above.)</em></p>
+  <p class="section-sub">For Option 1 and Option 2 full branches only. No royalty on revenue. No percentage of sales. Just two flat monthly fees — that's it.</p>
   <div class="fees-grid">
     <div class="fee-card reveal">
       <span class="fee-icon">🤖</span>
@@ -1194,8 +1115,8 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
 <!-- CTA / CONTACT FORM -->
 <section class="cta-section" id="inquire">
   <div class="cta-bg"></div>
-  <h2>Ready to Own a Branch<br/>or <span>Village Hub?</span></h2>
-  <p>City and village slots go fast. Leave your details and our franchise team will contact you within 24 hours.</p>
+  <h2>Ready to Own a<br/><span>3DBotics® Branch?</span></h2>
+  <p>City slots go fast. Leave your details and our franchise team will contact you within 24 hours.</p>
 
   <div class="contact-form">
     <h3>📋 Franchise Inquiry Form</h3>
@@ -1217,16 +1138,15 @@ src="https://www.facebook.com/tr?id=1979839176001660&ev=PageView&noscript=1"
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>Village, Subdivision or City *</label>
-          <input type="text" id="fcity" placeholder="e.g. Avida Settings Nuvali, Sta. Rosa City" required/>
+          <label>City / Municipality *</label>
+          <input type="text" id="fcity" placeholder="e.g. Sta. Rosa City, Laguna" required/>
         </div>
         <div class="form-group">
           <label>Package Interest</label>
           <select id="fpackage">
             <option value="">Select a package</option>
-            <option value="Option 3 - Village Hub (₱330,000)">Option 3 — Village Hub (₱330,000) 🏆 Best Selling</option>
             <option value="Option 1 - Full Center (₱880,000)">Option 1 — Full Center (₱880,000)</option>
-            <option value="Option 2 - Semi Center (₱660,000)">Option 2 — Semi Center (₱660,000)</option>
+            <option value="Option 2 - Semi Center (₱660,000)">Option 2 — Semi Center (₱660,000) · until Jan 1, 2027</option>
             <option value="Undecided">Undecided / Want to discuss</option>
           </select>
         </div>
